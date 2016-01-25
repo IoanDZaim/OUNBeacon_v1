@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OUNBeacon_v1</string>
+    <string name="title_activity_main">OUN Beacon</string>
+    <string name="hello_mes">Hello visitor to the Welten Institute!</string>
+    <string name="nothing">No known location</string>
+    <string name="winter">You are in room WInter</string>
+    <string name="zomer">You are in room Zomer</string>
+    <string name="herfst">You are in room Herfst</string>
+</resources>
