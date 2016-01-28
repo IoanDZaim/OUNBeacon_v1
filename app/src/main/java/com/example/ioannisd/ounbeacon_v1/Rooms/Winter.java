@@ -56,7 +56,7 @@ public class Winter extends Activity {
                         .setText("Connection through HDMI cable")
         );
         cards.add(lesson2, new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText("Lesson 2")
+                        .setText("Connection through VGA cable")
         );
 
         return cards;
