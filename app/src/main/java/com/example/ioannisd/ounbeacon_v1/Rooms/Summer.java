@@ -23,7 +23,7 @@ import java.util.List;
 public class Summer extends Activity {
 
 
-    private CardScrollView testing;
+    private CardScrollView SummView;
     private static final int message = 0;
     private static final int lesson1 = 1;
     private static final int lesson2 = 2;
@@ -31,10 +31,10 @@ public class Summer extends Activity {
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
 
-        testing=new CardScrollView(this);
-        testing.setAdapter(new CardAdapter(createCards(this)));
+        SummView=new CardScrollView(this);
+        SummView.setAdapter(new CardAdapter(createCards(this)));
         setCardScrollerListener();
-        setContentView(testing);
+        setContentView(SummView);
 /**
  handler.postDelayed(new Runnable() {
 @Override
@@ -63,7 +63,7 @@ setContentView(testing);
     }//List
 
     private void setCardScrollerListener() {
-        testing.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        SummView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -96,11 +96,11 @@ setContentView(testing);
     @Override
     protected void onResume(){
         super.onResume();
-        testing.activate();
+        SummView.activate();
     }//onResume
     @Override
     protected void onPause(){
-        testing.deactivate();
+        SummView.deactivate();
         super.onPause();
     }//onPause
 

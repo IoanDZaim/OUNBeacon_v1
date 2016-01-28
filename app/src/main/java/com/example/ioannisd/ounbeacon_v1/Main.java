@@ -27,7 +27,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.util.Log;
@@ -41,7 +40,6 @@ import com.estimote.sdk.Region;
 import com.estimote.sdk.Utils;
 import com.example.ioannisd.ounbeacon_v1.Rooms.Summer;
 import com.example.ioannisd.ounbeacon_v1.Rooms.Winter;
-import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
@@ -61,6 +59,10 @@ public class Main extends Activity implements SensorEventListener{
     Beacon[] Beacons;
     String mac_address;
     Distance[] BeaconDist;
+    private enum Distance {UNKNOWN, IMMEDIATE, NEAR, FAR}
+    private static final String TAG="Mac Address";
+    private static final String ESTIMOTE_PROXIMITY_UUID= "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+    Double[] threshold = {0.4,1.5,3.1};
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -72,10 +74,7 @@ public class Main extends Activity implements SensorEventListener{
 
     }
 
-    private enum Distance {UNKNOWN, IMMEDIATE, NEAR, FAR}
-    private static final String TAG="Mac Address";
-    private static final String ESTIMOTE_PROXIMITY_UUID= "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-    Double[] threshold = {0.4,1.5,3.1};
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -164,7 +163,7 @@ public class Main extends Activity implements SensorEventListener{
                 return AdapterView.INVALID_POSITION;
             }
         });
-        // Handle the TAP event.
+        /** Handle the TAP event.
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -172,7 +171,7 @@ public class Main extends Activity implements SensorEventListener{
                 AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 am.playSoundEffect(Sounds.DISALLOWED);
             }
-        });
+        });*/
         setContentView(mCardScroller);
     }//onCreate
 

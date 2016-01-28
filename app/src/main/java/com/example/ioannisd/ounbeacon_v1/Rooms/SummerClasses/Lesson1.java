@@ -16,14 +16,14 @@ import java.util.List;
  */
 public class Lesson1 extends Activity{
 
-    private CardScrollView testing;
+    private CardScrollView SummLes1;
 
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        testing=new CardScrollView(this);
-        testing.setAdapter(new CardAdapter(createCards(this)));
-        setContentView(testing);
+        SummLes1=new CardScrollView(this);
+        SummLes1.setAdapter(new CardAdapter(createCards(this)));
+        setContentView(SummLes1);
     }//onCreate
 
     private List<CardBuilder> createCards(Context context) {
@@ -43,11 +43,11 @@ public class Lesson1 extends Activity{
     @Override
     protected void onResume(){
         super.onResume();
-        testing.activate();
+        SummLes1.activate();
     }//onResume
     @Override
     protected void onPause(){
-        testing.deactivate();
+        SummLes1.deactivate();
         super.onPause();
     }//onPause
 }

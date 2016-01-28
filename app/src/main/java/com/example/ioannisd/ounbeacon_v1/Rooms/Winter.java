@@ -23,7 +23,7 @@ import java.util.List;
 public class Winter extends Activity {
 
 
-    private CardScrollView testing;
+    private CardScrollView WintView;
     private static final int message = 0;
     private static final int lesson1 = 1;
     private static final int lesson2 = 2;
@@ -31,10 +31,10 @@ public class Winter extends Activity {
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
 
-        testing=new CardScrollView(this);
-        testing.setAdapter(new CardAdapter(createCards(this)));
+        WintView=new CardScrollView(this);
+        WintView.setAdapter(new CardAdapter(createCards(this)));
         setCardScrollerListener();
-        setContentView(testing);
+        setContentView(WintView);
 /**
         handler.postDelayed(new Runnable() {
             @Override
@@ -53,7 +53,7 @@ public class Winter extends Activity {
         );
 
         cards.add(lesson1, new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText("Lesson 1")
+                        .setText("Connection through HDMI cable")
         );
         cards.add(lesson2, new CardBuilder(context, CardBuilder.Layout.MENU)
                         .setText("Lesson 2")
@@ -63,7 +63,7 @@ public class Winter extends Activity {
     }//List
 
     private void setCardScrollerListener() {
-        testing.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        WintView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -96,18 +96,13 @@ public class Winter extends Activity {
     @Override
     protected void onResume(){
         super.onResume();
-        testing.activate();
+        WintView.activate();
     }//onResume
     @Override
     protected void onPause(){
-        testing.deactivate();
+        WintView.deactivate();
         super.onPause();
     }//onPause
 
-    private View firstView(){
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT_FIXED);
-        card.setText("Hello! It seems you are in room Winter. Here are some classes for you!");
 
-        return card.getView();
-    }//firstView
 }//Winter
