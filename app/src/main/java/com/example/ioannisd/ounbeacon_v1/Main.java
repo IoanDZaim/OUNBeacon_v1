@@ -22,6 +22,7 @@ package com.example.ioannisd.ounbeacon_v1;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -37,6 +38,8 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.Utils;
+import com.example.ioannisd.ounbeacon_v1.Rooms.Summer;
+import com.example.ioannisd.ounbeacon_v1.Rooms.Winter;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
@@ -116,13 +119,13 @@ public class Main extends Activity implements SensorEventListener{
                                 //double BeaconDistance = Utils.computeAccuracy(Beacons[j]);
                                // Log.d(TAG, "BeaconDistance: " + BeaconDistance + " " + BeaconDist[j]);
                                 if (mac_address.equals("DB:52:3B:B1:20:EB")&&((BeaconDist[j]==Distance.NEAR) || (BeaconDist[j]==Distance.IMMEDIATE))) {
-                                    testvar=1;
-                                    setContentView(buildView());
-                                    //startActivity(new Intent(Main.this, Winter.class));
+                                    //testvar=1;
+                                    //setContentView(buildView());
+                                    startActivity(new Intent(Main.this, Winter.class));
                                 } else if (mac_address.equals("C6:5B:D7:05:A5:C7")&&((BeaconDist[j]==Distance.NEAR) || (BeaconDist[j]==Distance.IMMEDIATE))) {
-                                    testvar=2;
-                                    setContentView(buildView());
-                                    //startActivity(new Intent(Main.this, Summer.class));
+                                    //testvar=2;
+                                    //setContentView(buildView());
+                                    startActivity(new Intent(Main.this, Summer.class));
                                 } else if (mac_address.equals("D7:7F:33:05:74:2C")&&((BeaconDist[j]==Distance.NEAR) || (BeaconDist[j]==Distance.IMMEDIATE))) {
                                     testvar=3;
                                     setContentView(buildView());

@@ -31,19 +31,19 @@ public class Lesson1 extends Activity{
         ArrayList<CardBuilder> cards = new ArrayList<>();
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Hello! This lesson will demonstrate you how to connect your laptop to the projector throught the use of an HDMI cable.")
+                        .setText("Hello! This lesson will demonstrate you how to connect your laptop to the beamer through the use of an HDMI cable.")
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("First things first, check if you have an HDMI port on your laptop. It looks like the image on the left.")
-                        .setIcon(R.drawable.hdmiport)
+                        .addImage(R.drawable.hdmiport)
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
-                        .setText("If you do, great! Find the HDMI cable and connect it to the port of your PC. The cable looks like the one on the image and it's usually on top of the table")
-                        .setIcon(R.drawable.hdmicable)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
+                        .setText("If you do, great! Find the HDMI cable and connect it to your PC. The cable looks like the one on the image and it's usually on top of the table")
+                        .addImage(R.drawable.hdmicable)
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Well done! Now you must see your screen projected on the wall!")
-                        .setIcon(R.drawable.vaultboy)
+                        .addImage(R.drawable.vault_boy)
         );
         return cards;
     }//List

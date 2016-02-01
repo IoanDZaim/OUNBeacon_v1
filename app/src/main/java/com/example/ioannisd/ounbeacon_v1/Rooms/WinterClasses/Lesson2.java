@@ -31,18 +31,18 @@ public class Lesson2 extends Activity{
         ArrayList<CardBuilder> cards = new ArrayList<>();
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("In case your laptop doesn't have an HDMI port, try to connect the projector through the VGA port")
+                        .setText("In case your laptop doesn't have an HDMI port, try to connect the beamer through the VGA port")
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("The VGA port looks like the image on left")
-                        .setIcon(R.drawable.vgaport)
+                        .addImage(R.drawable.vgaport)
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
-                        .setText("Find the VGA cable of the projector and connected to the port of your laptop. The cable must look like the one on the left")
-                        .setIcon(R.drawable.vgacable)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
+                        .setText("Find the VGA cable of the beamer and connected to your laptop. The cable looks like the one on the left")
+                        .addImage(R.drawable.vgacable)
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Congratulations! You connected your laptop to the projector!")
+                        .setText("Congratulations! You connected your laptop to the beamer!")
         );
         return cards;
     }//List

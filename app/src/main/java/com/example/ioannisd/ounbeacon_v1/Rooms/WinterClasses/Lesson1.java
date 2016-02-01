@@ -30,17 +30,17 @@ public class Lesson1 extends Activity{
     private List<CardBuilder> createCards(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<>();
 
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("First look for a cable that looks like the one in the image")
-                        .setIcon(R.drawable.hdmicable)
+                        .addImage(R.drawable.hdmicable)
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Then connect it to your laptop to the port that looks like the one on the image")
-                        .setIcon(R.drawable.hdmiport)
+                        .addImage(R.drawable.hdmiport)
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Congrats! Now you should see your screen projected on the wall!")
-                        .setIcon(R.drawable.jaimelike)
+                        .addImage(R.drawable.vault_boy)
         );
         return cards;
     }//List
