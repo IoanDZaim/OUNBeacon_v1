@@ -27,6 +27,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.util.Log;
@@ -40,6 +41,7 @@ import com.estimote.sdk.Region;
 import com.estimote.sdk.Utils;
 import com.example.ioannisd.ounbeacon_v1.Rooms.Summer;
 import com.example.ioannisd.ounbeacon_v1.Rooms.Winter;
+import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
@@ -167,7 +169,6 @@ public class Main extends Activity implements SensorEventListener{
                 return AdapterView.INVALID_POSITION;
             }
         });
-        /** Handle the TAP event.
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -175,7 +176,7 @@ public class Main extends Activity implements SensorEventListener{
                 AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 am.playSoundEffect(Sounds.DISALLOWED);
             }
-        });*/
+        });
         setContentView(mCardScroller);
     }//onCreate
 

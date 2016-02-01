@@ -35,14 +35,7 @@ public class Summer extends Activity {
         SummView.setAdapter(new CardAdapter(createCards(this)));
         setCardScrollerListener();
         setContentView(SummView);
-/**
- handler.postDelayed(new Runnable() {
-@Override
-public void run() {
-setContentView(testing);
-}
-}, 5000);
- */
+
     }//onCreate
 
     private List<CardBuilder> createCards(Context context) {
