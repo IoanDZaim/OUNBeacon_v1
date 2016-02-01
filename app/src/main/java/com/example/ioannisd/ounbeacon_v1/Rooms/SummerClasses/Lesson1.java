@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.example.ioannisd.ounbeacon_v1.R;
 import com.example.ioannisd.ounbeacon_v1.Rooms.CardAdapter;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollView;
@@ -30,13 +31,19 @@ public class Lesson1 extends Activity{
         ArrayList<CardBuilder> cards = new ArrayList<>();
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Testing to see if summer classes work")
+                        .setText("Hello! This lesson will demonstrate you how to connect your laptop to the projector throught the use of an HDMI cable.")
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Well, if you see this then it works!")
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("First things first, check if you have an HDMI port on your laptop. It looks like the image on the left.")
+                        .setIcon(R.drawable.hdmiport)
         );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Mijn Nederlands is niet goed :/")
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("If you do, great! Find the HDMI cable and connect it to the port of your PC. The cable looks like the one on the image and it's usually on top of the table")
+                        .setIcon(R.drawable.hdmicable)
+        );
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("Well done! Now you must see your screen projected on the wall!")
+                        .setIcon(R.drawable.vaultboy)
         );
         return cards;
     }//List

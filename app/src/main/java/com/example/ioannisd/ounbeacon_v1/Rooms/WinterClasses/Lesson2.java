@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.example.ioannisd.ounbeacon_v1.R;
 import com.example.ioannisd.ounbeacon_v1.Rooms.CardAdapter;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollView;
@@ -30,13 +31,18 @@ public class Lesson2 extends Activity{
         ArrayList<CardBuilder> cards = new ArrayList<>();
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Testing to see if lesson 2 works")
+                        .setText("In case your laptop doesn't have an HDMI port, try to connect the projector through the VGA port")
+        );
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("The VGA port looks like the image on left")
+                        .setIcon(R.drawable.vgaport)
+        );
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("Find the VGA cable of the projector and connected to the port of your laptop. The cable must look like the one on the left")
+                        .setIcon(R.drawable.vgacable)
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Well, if you see this then it works!")
-        );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Third card mate! Ze end!")
+                        .setText("Congratulations! You connected your laptop to the projector!")
         );
         return cards;
     }//List

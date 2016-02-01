@@ -22,7 +22,6 @@ package com.example.ioannisd.ounbeacon_v1;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -38,8 +37,6 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.Utils;
-import com.example.ioannisd.ounbeacon_v1.Rooms.Summer;
-import com.example.ioannisd.ounbeacon_v1.Rooms.Winter;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
@@ -63,6 +60,7 @@ public class Main extends Activity implements SensorEventListener{
     private static final String TAG="Mac Address";
     private static final String ESTIMOTE_PROXIMITY_UUID= "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     Double[] threshold = {0.4,1.5,3.1};
+    int testvar;
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -79,7 +77,6 @@ public class Main extends Activity implements SensorEventListener{
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-
         Beacons = new Beacon[1];
         BeaconDist = new Distance[1];
         sensorManager= (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -96,6 +93,7 @@ public class Main extends Activity implements SensorEventListener{
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        testvar=0;
                         int j=0;
                         for (Beacon beacon:beacons) {
                             Beacons[j] = beacon;
@@ -118,13 +116,16 @@ public class Main extends Activity implements SensorEventListener{
                                 //double BeaconDistance = Utils.computeAccuracy(Beacons[j]);
                                // Log.d(TAG, "BeaconDistance: " + BeaconDistance + " " + BeaconDist[j]);
                                 if (mac_address.equals("DB:52:3B:B1:20:EB")&&((BeaconDist[j]==Distance.NEAR) || (BeaconDist[j]==Distance.IMMEDIATE))) {
-                                    //setContentView(winterView());
-                                    startActivity(new Intent(Main.this, Winter.class));
+                                    testvar=1;
+                                    setContentView(buildView());
+                                    //startActivity(new Intent(Main.this, Winter.class));
                                 } else if (mac_address.equals("C6:5B:D7:05:A5:C7")&&((BeaconDist[j]==Distance.NEAR) || (BeaconDist[j]==Distance.IMMEDIATE))) {
-                                    //setContentView(zomerView());
-                                    startActivity(new Intent(Main.this, Summer.class));
+                                    testvar=2;
+                                    setContentView(buildView());
+                                    //startActivity(new Intent(Main.this, Summer.class));
                                 } else if (mac_address.equals("D7:7F:33:05:74:2C")&&((BeaconDist[j]==Distance.NEAR) || (BeaconDist[j]==Distance.IMMEDIATE))) {
-                                    setContentView(herfstView());
+                                    testvar=3;
+                                    setContentView(buildView());
                                 }//if
                             } else {
                                 setContentView(errorView());
@@ -206,7 +207,16 @@ public class Main extends Activity implements SensorEventListener{
 
     private View buildView() {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
-        card.setText(R.string.hello_mes);
+        if (testvar==0){
+        card.setText(R.string.hello_mes);}
+        else if (testvar==1){
+            card.setText("Winter");
+        }else if (testvar==2){
+            card.setText("Zomer");
+        }
+        else if (testvar==3){
+            card.setText("Herfst");
+        }
         return card.getView();
     }
 

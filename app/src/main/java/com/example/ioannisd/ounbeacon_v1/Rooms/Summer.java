@@ -53,10 +53,10 @@ setContentView(testing);
         );
 
         cards.add(lesson1, new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText("Lesson 1")
+                        .setText("Connection through HDMI cable")
         );
         cards.add(lesson2, new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText("Lesson 2")
+                        .setText("Connection through VGA cable")
         );
 
         return cards;
@@ -104,10 +104,4 @@ setContentView(testing);
         super.onPause();
     }//onPause
 
-    private View firstView(){
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT_FIXED);
-        card.setText("Hello! It seems you are in room Winter. Here are some classes for you!");
-
-        return card.getView();
-    }//firstView
 }//Winter

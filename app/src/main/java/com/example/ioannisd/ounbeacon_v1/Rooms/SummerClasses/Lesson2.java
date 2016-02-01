@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.example.ioannisd.ounbeacon_v1.R;
 import com.example.ioannisd.ounbeacon_v1.Rooms.CardAdapter;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollView;
@@ -30,13 +31,18 @@ public class Lesson2 extends Activity{
         ArrayList<CardBuilder> cards = new ArrayList<>();
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("BOO YEAH!")
+                        .setText("In case you don't have an HDMI port, then you can use the VGA cable.")//assumption that there is no HMDI port. Should I change this?
+        );
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("The VGA port on your laptop should look like the one on the image.")
+                        .setIcon(R.drawable.vgaport)
+        );
+        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS_FIXED)
+                        .setText("Find the VGA cable on the table and connected to the port of your laptop.")
+                        .setIcon(R.drawable.vgacable)
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Well, if you see this then it works!")
-        );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
-                        .setText("Third card mate! Ze end!")
+                        .setText("Well done! If everything went right then you must see your screen projected on the wall.")
         );
         return cards;
     }//List
