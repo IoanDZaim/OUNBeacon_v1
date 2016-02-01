@@ -42,12 +42,12 @@
             />
         <activity
             android:name=".Rooms.WinterClasses.Lesson1"
-            android:label="Lesson1"
+            android:label="Winter - Lesson1"
             android:exported="true"
             />
         <activity
             android:name=".Rooms.WinterClasses.Lesson2"
-            android:label="Lesson2"
+            android:label="Winter - Lesson2"
             android:exported="true"
             />
         <activity
@@ -57,12 +57,12 @@
             />
         <activity
             android:name=".Rooms.SummerClasses.Lesson1"
-            android:label="Lesson1"
+            android:label="Summer - Lesson1"
             android:exported="true"
             />
         <activity
             android:name=".Rooms.SummerClasses.Lesson2"
-            android:label="Lesson2"
+            android:label="Summer - Lesson2"
             android:exported="true"
             />
 </application>

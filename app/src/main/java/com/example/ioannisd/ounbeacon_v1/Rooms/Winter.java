@@ -50,13 +50,17 @@ public class Winter extends Activity {
 
         cards.add(message, new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
                         .setText("Hello! It seems you are in room Winter. Slide to the right to see some lessons about the equipment here!")
+                        .setFootnote("Welten Institute")
         );
 
         cards.add(lesson1, new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText("Connection through HDMI cable")
+                        .setText("Connect to the beamer through HDMI cable")
+                        .setFootnote("Welten Institute")
+
         );
         cards.add(lesson2, new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText("Connection through VGA cable")
+                        .setText("Connect to the beamer through VGA cable")
+                        .setFootnote("Welten Institute")
         );
 
         return cards;

@@ -33,14 +33,17 @@ public class Lesson1 extends Activity{
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("First look for a cable that looks like the one in the image")
                         .addImage(R.drawable.hdmicable)
+                        .setFootnote("Winter")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Then connect it to your laptop to the port that looks like the one on the image")
                         .addImage(R.drawable.hdmiport)
+                        .setFootnote("Winter")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Congrats! Now you should see your screen projected on the wall!")
                         .addImage(R.drawable.vault_boy)
+                        .setFootnote("Winter")
         );
         return cards;
     }//List

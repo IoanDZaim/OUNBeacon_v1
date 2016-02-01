@@ -63,7 +63,7 @@ public class Main extends Activity implements SensorEventListener{
     private static final String TAG="Mac Address";
     private static final String ESTIMOTE_PROXIMITY_UUID= "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     Double[] threshold = {0.4,1.5,3.1};
-    int testvar;
+    int testvar; //variable used for testing the beacons
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -211,14 +211,15 @@ public class Main extends Activity implements SensorEventListener{
     private View buildView() {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
         if (testvar==0){
-        card.setText(R.string.hello_mes);}
+        card.setText(R.string.hello_mes);
+        }
         else if (testvar==1){
-            card.setText("Winter");
+            card.setText("Winter"); //testing code
         }else if (testvar==2){
-            card.setText("Zomer");
+            card.setText("Zomer"); //testing code
         }
         else if (testvar==3){
-            card.setText("Herfst");
+            card.setText("Herfst"); //testing code
         }
         return card.getView();
     }
@@ -230,22 +231,4 @@ public class Main extends Activity implements SensorEventListener{
 
     }
 
-    private View winterView(){
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
-        card.setText(R.string.winter);
-        return card.getView();
-
-    }
-    private View zomerView(){
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
-        card.setText(R.string.zomer);
-        return card.getView();
-
-    }
-    private View herfstView(){
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
-        card.setText(R.string.herfst);
-        return card.getView();
-
-    }
 }

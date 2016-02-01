@@ -32,17 +32,21 @@ public class Lesson2 extends Activity{
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
                         .setText("In case your laptop doesn't have an HDMI port, try to connect the beamer through the VGA port")
+                        .setFootnote("Winter")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("The VGA port looks like the image on left")
                         .addImage(R.drawable.vgaport)
+                        .setFootnote("Winter")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Find the VGA cable of the beamer and connected to your laptop. The cable looks like the one on the left")
                         .addImage(R.drawable.vgacable)
+                        .setFootnote("Winter")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
                         .setText("Congratulations! You connected your laptop to the beamer!")
+                        .setFootnote("Winter")
         );
         return cards;
     }//List

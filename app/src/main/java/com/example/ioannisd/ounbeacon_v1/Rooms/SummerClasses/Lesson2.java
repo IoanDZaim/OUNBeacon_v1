@@ -32,17 +32,21 @@ public class Lesson2 extends Activity{
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
                         .setText("In case you don't have an HDMI port, then you can use the VGA cable.")//assumption that there is no HMDI port. Should I change this?
+                        .setFootnote("Summer")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("The VGA port on your laptop should look like the one on the image.")
                         .addImage(R.drawable.vgaport)
+                        .setFootnote("Summer")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Find the VGA cable on the table and connected to the port of your laptop.")
                         .addImage(R.drawable.vgacable)
+                        .setFootnote("Summer")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
                         .setText("Well done! If everything went right then you must see your screen projected on the wall.")
+                        .setFootnote("Summer")
         );
         return cards;
     }//List

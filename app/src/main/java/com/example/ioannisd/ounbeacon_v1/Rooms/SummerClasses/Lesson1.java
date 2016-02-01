@@ -32,18 +32,22 @@ public class Lesson1 extends Activity{
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.TEXT_FIXED)
                         .setText("Hello! This lesson will demonstrate you how to connect your laptop to the beamer through the use of an HDMI cable.")
+                        .setFootnote("Summer")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("First things first, check if you have an HDMI port on your laptop. It looks like the image on the left.")
                         .addImage(R.drawable.hdmiport)
+                        .setFootnote("Summer")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("If you do, great! Find the HDMI cable and connect it to your PC. The cable looks like the one on the image and it's usually on top of the table")
                         .addImage(R.drawable.hdmicable)
+                        .setFootnote("Summer")
         );
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                         .setText("Well done! Now you must see your screen projected on the wall!")
                         .addImage(R.drawable.vault_boy)
+                        .setFootnote("Summer")
         );
         return cards;
     }//List
